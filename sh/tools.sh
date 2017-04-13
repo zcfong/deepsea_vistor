@@ -8,16 +8,11 @@ apt-get install -y gcc
 apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libsqlite3-dev
 apt-get install -y supervisor
 
-cd /opt
-wget http://download.redis.io/redis-stable.tar.gz
-tar xvzf redis-stable.tar.gz
-cd redis-stable
-make
-
+apt install -y redis-server
 redis-server &
 
 git clone https://github.com/pyenv/pyenv.git /opt/pyenv
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+echo 'export PYENV_ROOT="/opt/pyenv"' >> ~/.bash_profile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 
