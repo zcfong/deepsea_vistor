@@ -25,3 +25,5 @@ cd /opt/pyenv/cache
 wget https://www.python.org/ftp/python/3.5.3/Python-3.5.3.tar.xz
 
 pyenv install 3.5.3
+
+pyenv virtualenv 3.5.3 core
