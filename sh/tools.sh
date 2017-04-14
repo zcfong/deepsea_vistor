@@ -6,10 +6,13 @@ apt-get install -y build-essential
 apt-get install -y gcc
 
 apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libsqlite3-dev
-apt-get install -y supervisor
 
 apt install -y redis-server
 redis-server &
+
+apt-get install python-pip -y
+pip install supervisor
+echo_supervisord_conf > /etc/supervisord.conf
 
 git clone https://github.com/pyenv/pyenv.git /opt/pyenv
 echo 'export PYENV_ROOT="/opt/pyenv"' >> ~/.bash_profile
